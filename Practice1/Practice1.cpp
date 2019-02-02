@@ -4,23 +4,43 @@
 #include "pch.h"
 #include <iostream>
 
-int factorial(int n)
+//int factorial(int n)
+//{
+//	if (n < 0)
+//	{
+//		return -1;
+//	}
+//	else if (n == 0)
+//	{
+//		return 1;
+//	}
+//	else
+//		return n * factorial(n - 1);
+//}
+	int fib(int n)
+	{
+		if (n <= 0)
+			return 0;
+		else if (n == 1)
+			return 1;
+		return fib(n - 1) + fib(n - 2);
+
+	}
+void allFib(int n)
 {
-	if (n < 0)
+	for (int i = 0; i < n; i++)
 	{
-		return -1;
+			std::cout << i << ": " << fib(i);
 	}
-	else if (n == 0)
-	{
-		return 1;
-	}
-	else
-		return n * factorial(n - 1);
 }
+
+
 int main()
+	
 {
     std::cout << "Hello World!\n"; 
-	std::cout<<factorial(5);
+	//std::cout<<factorial(5);
+	allFib(5);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
